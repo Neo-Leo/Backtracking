@@ -40,4 +40,25 @@ public class LetterCombinationsOfPhoneNumbers {
         letterCombinationsWrapper(digits,0,sb,list);
         return list; 
     }
+    
+    /* Iterative Approach
+    public List<String> letterCombinations(String digits) {
+        List<String> list = new LinkedList<String>();
+        if(digits == null || digits.length() == 0) return list;
+        StringBuilder sb = new StringBuilder(); 
+        int n = digits.length(); 
+        list.add("");
+        for(int i=0; i<=n-1; i++){
+            List<String> tempList = new ArrayList<>();
+            for(String s : list) {
+                for(char ch : hm.get(digits.charAt(i)).toCharArray()){
+                    String temp = s + ch;
+                    tempList.add(new String(temp));
+                }
+            }
+            list = tempList; 
+        }
+        return list; 
+    }
+    */
 }
